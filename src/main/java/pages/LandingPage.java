@@ -17,6 +17,7 @@ public class LandingPage {
     private static String expectedUrl = "https://www.automationexercise.com/";
     private By loginAndSigunUpButtons = By.className("fa-lock");
 
+
     //methods
     public LandingPage currentURL() {
         driver.getCurrentUrl();

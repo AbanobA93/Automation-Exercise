@@ -40,10 +40,10 @@ public class LoginAndSignUpPage {
         driver.findElement(loginButton).click();
         return this;
     }
-    public SignupPage moveToSignupPage(){
-        driver.findElement(signupNameField).sendKeys("testero");
+    public SignupPage moveToSignupPage(String username,String email){
+        driver.findElement(signupNameField).sendKeys(username);
         wait.until(ExpectedConditions.visibilityOfElementLocated(signupEmailField));
-        driver.findElement(signupEmailField).sendKeys("testa@test.testelol");
+        driver.findElement(signupEmailField).sendKeys(email);
         driver.findElement(signupButton).click();
     return new SignupPage(driver,wait);}
 

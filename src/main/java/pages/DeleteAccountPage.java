@@ -10,7 +10,7 @@ public class DeleteAccountPage {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    public DeleteAccountPage(WebDriver driver, WebDriverWait wait){
+    public DeleteAccountPage(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
         this.wait = wait;
     }
@@ -19,11 +19,10 @@ public class DeleteAccountPage {
 
     public boolean isDeleteAccountPageDisplayed() {
         try {
-            return wait.until(ExpectedConditions.visibilityOfElementLocated(accountDeletedMsg)).isDisplayed();}
-        catch (TimeoutException e) {
-            return false;}
+            return wait.until(ExpectedConditions.visibilityOfElementLocated(accountDeletedMsg)).isDisplayed();
+        } catch (TimeoutException e) {
+            return false;
+        }
     }
 
-    public String getAccountDeletedMessageText() {
-        return driver.findElement(accountDeletedMsg).getText();}
 }

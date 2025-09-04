@@ -1,6 +1,6 @@
-package tests;
+package Tests;
 
-import Utils.SignupDataProvider;
+import Utils.FakerDataProvider;
 import base.BaseTest;
 import org.testng.annotations.Test;
 import pages.LandingPage;
@@ -8,15 +8,16 @@ import pages.LandingPage;
 
 public class SignUpTest extends BaseTest {
 
-    @Test(dataProvider = "signupData", dataProviderClass = SignupDataProvider.class)
-    public void signupNameAndEmail(String username, String email,String firstname, String lastname, String password, String company,
+    @Test(dataProvider = "fullUserData", dataProviderClass = FakerDataProvider.class)
+    public void signupNameAndEmail(String username,String email,
+                                   String firstname, String lastname, String password, String company,
                                    String firstAddress, String secondAddress, String country, String stateName,
                                    String cityName, String zipCodeNumber, String mobile,
                                    String day, String month, String year) {
 
             new LandingPage(driver, wait)
                         .moveToLoginAndSigunUp()
-                        .moveToSignupPage(username,email)
+                        .moveToSignupPage(username, email)
                         .moveToAccountCreatedPage(
                                  password
                                 ,firstname
@@ -24,8 +25,8 @@ public class SignUpTest extends BaseTest {
                                 ,month
                                 ,year
                                 ,lastname
-                                , company
-                                , firstAddress
+                                ,company
+                                ,firstAddress
                                 ,secondAddress
                                 ,country
                                 ,stateName
@@ -35,23 +36,22 @@ public class SignUpTest extends BaseTest {
                         .isAccountCreatedMessageDisplayed();
     }
 
-    @Test (dataProvider = "signupData", dataProviderClass = SignupDataProvider.class)
-    public void moveToHomePage(String username, String email,String firstname, String lastname, String password, String company,
+    @Test(dataProvider = "fullUserData", dataProviderClass = FakerDataProvider.class)
+    public void moveToHomePage(String username,String email,String firstname, String lastname, String password, String company,
                                String firstAddress, String secondAddress, String country, String stateName,
                                String cityName, String zipCodeNumber, String mobile,
                                String day, String month, String year) {
         new LandingPage(driver, wait)
                 .moveToLoginAndSigunUp()
                 .moveToSignupPage(username,email)
-                .moveToAccountCreatedPage(
-                        password
+                .moveToAccountCreatedPage(password
                         ,firstname
                         ,day
                         ,month
                         ,year
                         ,lastname
-                        , company
-                        , firstAddress
+                        ,company
+                        ,firstAddress
                         ,secondAddress
                         ,country
                         ,stateName
