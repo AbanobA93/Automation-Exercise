@@ -1,0 +1,48 @@
+package tests;
+
+import base.BaseTest;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import pages.LandingPage;
+
+public class LoginTest extends BaseTest {
+
+    @Test(priority = 1)
+    public void assertionLoginText(){
+        Assert.assertTrue(
+                new LandingPage(driver,wait)
+                        .moveToLoginAndSigunUp()
+                        .isLoginTextDisplayed()
+        );
+    }
+
+    @Test(priority = 2)
+    public void assertionSignUpText(){
+        Assert.assertTrue(
+                new LandingPage(driver,wait)
+                            .moveToLoginAndSigunUp()
+                            .isNewUserSignupTextDisplayed()
+        );
+    }
+
+    @Test(priority = 3)
+    public void validLogin(){
+        Assert.assertTrue(
+                new LandingPage(driver,wait)
+                        .moveToLoginAndSigunUp()
+                        .validLogin("hellolo@heleilo.com","test.tester@!#")
+                        .isLogoutButtonDisplayed()
+        );
+
+    }
+
+    @Test(priority = 4)
+    public void invalidLogin(){
+        Assert.assertTrue(
+                new LandingPage(driver,wait)
+                        .moveToLoginAndSigunUp()
+                        .invalidLogin()
+                        .invalidUsernameOrPassMessageDisplayed()
+        );
+    }
+}
