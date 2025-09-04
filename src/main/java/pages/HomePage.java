@@ -12,4 +12,5 @@ public class HomePage {
         this.driver = driver;
         this.wait =wait;
     }
+
 }

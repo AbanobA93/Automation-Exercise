@@ -1,4 +1,4 @@
-package Tests;
+package tests;
 
 import Utils.FakerDataProvider;
 import base.BaseTest;

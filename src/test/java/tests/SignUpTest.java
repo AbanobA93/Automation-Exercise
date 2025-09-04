@@ -1,7 +1,8 @@
-package Tests;
+package tests;
 
 import Utils.FakerDataProvider;
 import base.BaseTest;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LandingPage;
 
@@ -14,7 +15,7 @@ public class SignUpTest extends BaseTest {
                                    String firstAddress, String secondAddress, String country, String stateName,
                                    String cityName, String zipCodeNumber, String mobile,
                                    String day, String month, String year) {
-
+        Assert.assertTrue(
             new LandingPage(driver, wait)
                         .moveToLoginAndSigunUp()
                         .moveToSignupPage(username, email)
@@ -33,7 +34,7 @@ public class SignUpTest extends BaseTest {
                                 ,zipCodeNumber
                                 ,cityName
                                 ,mobile)
-                        .isAccountCreatedMessageDisplayed();
+                        .isAccountCreatedMessageDisplayed());
     }
 
     @Test(dataProvider = "fullUserData", dataProviderClass = FakerDataProvider.class)
