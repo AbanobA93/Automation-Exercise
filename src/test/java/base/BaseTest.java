@@ -18,6 +18,7 @@ public class BaseTest {
     wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     driver.get("https://www.automationexercise.com/");
     }
+
 @AfterMethod
     public void tearDown(){
     driver.quit();

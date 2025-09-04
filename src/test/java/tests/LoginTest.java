@@ -20,8 +20,8 @@ public class LoginTest extends BaseTest {
     public void assertionSignUpText(){
         Assert.assertTrue(
                 new LandingPage(driver,wait)
-                        .moveToLoginAndSigunUp()
-                        .isNewUserSignupTextDisplayed()
+                            .moveToLoginAndSigunUp()
+                            .isNewUserSignupTextDisplayed()
         );
     }
 
@@ -31,8 +31,9 @@ public class LoginTest extends BaseTest {
                 new LandingPage(driver,wait)
                         .moveToLoginAndSigunUp()
                         .validLogin("hellolo@heleilo.com","test.tester@!#")
-                        .urlLoginAndSignupPage()
+                        .isLogoutButtonDisplayed()
         );
+
     }
 
     @Test(priority = 4)

@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AccountCreatedPage {
@@ -14,7 +15,6 @@ public class AccountCreatedPage {
         this.wait = wait;
     }
     //elements
-    private static String expectedString = "Account Created!";
     private By accountCreatedText = By.xpath("//*[text()='Account Created!']");
     private By continueButton = By.cssSelector("a[data-qa=\"continue-button\"]");
     private By deleteAccountButton = By.className("fa-trash-o");
@@ -24,11 +24,14 @@ public class AccountCreatedPage {
     public boolean isAccountCreatedMessageDisplayed() {
         return driver.findElement(accountCreatedText).isDisplayed();
     }
+    //methods
     public HomePage moveToHomePage(){
         driver.findElement(continueButton).click();
         return new HomePage(driver,wait);
     }
     public DeleteAccountPage moveToDeleteAccountPage() {
+        driver.findElement(continueButton).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(deleteAccountButton));
         driver.findElement(deleteAccountButton).click();
         return new DeleteAccountPage(driver, wait);
     }

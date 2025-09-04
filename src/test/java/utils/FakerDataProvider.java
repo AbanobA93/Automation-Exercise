@@ -11,25 +11,25 @@ public class FakerDataProvider {
 
         return new Object[][] {
                 {
-                        // الصفحة الأولى (LoginAndSignUpPage)
+                        // (LoginAndSignUpPage)
                         faker.name().username(),                // username
                         faker.internet().emailAddress(),        // email
 
-                        // الصفحة التانية (SignupPage)
-                        faker.name().firstName(),               // firstname
-                        faker.name().lastName(),                // lastname
-                        faker.internet().password(),            // password
-                        faker.company().name(),                 // company
-                        faker.address().streetAddress(),        // firstAddress
-                        faker.address().secondaryAddress(),     // secondAddress
-                        "Canada",                               // country (ممكن تخليها ثابتة أو random)
-                        faker.address().state(),                // stateName
-                        faker.address().city(),                 // cityName
-                        faker.address().zipCode(),              // zipCodeNumber
-                        faker.phoneNumber().cellPhone(),        // mobile
-                        "10",                                   // day
-                        "May",                                  // month
-                        "1995"                                  // year
+                        //  (SignupPage)
+                        faker.name().firstName(),
+                        faker.name().lastName(),
+                        faker.internet().password(),
+                        faker.company().name(),
+                        faker.address().streetAddress(),
+                        faker.address().secondaryAddress(),
+                        "Canada",
+                        faker.address().state(),
+                        faker.address().city(),
+                        faker.address().zipCode(),
+                        faker.phoneNumber().cellPhone(),
+                        "10",
+                        "May",
+                        "1995"
                 }
         };
     }
