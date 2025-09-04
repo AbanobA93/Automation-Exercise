@@ -1,6 +1,6 @@
 package Tests;
 
-import Utils.FakerDataProvider;
+import utils.FakerDataProvider;
 import base.BaseTest;
 import org.testng.annotations.Test;
 import pages.LandingPage;
